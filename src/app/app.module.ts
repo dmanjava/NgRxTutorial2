@@ -9,6 +9,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './store/effects/app.effects';
+import { AutEffects } from './store/effects/aut.effects';
+import {HttpClient, HttpHandler} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,9 +27,9 @@ import { AppEffects } from './store/effects/app.effects';
       }
     }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    EffectsModule.forRoot([AppEffects]),
+    EffectsModule.forRoot([AppEffects, AutEffects]),
   ],
-  providers: [],
+  providers: [HttpClient, HttpHandler],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
