@@ -2,12 +2,14 @@ import * as authActions from '../actions/auth.actions';
 
 export interface State {
   userName?: string;
+  friendlyName?: string
 }
 
 export const authFeatureKey = 'auth';
 
 export const initialState: State = {
-  userName: null
+  userName: null,
+  friendlyName: null
 };
 
 export function reducer(state = initialState, action: authActions.AuthActions): State {

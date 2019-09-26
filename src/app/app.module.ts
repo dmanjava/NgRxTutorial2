@@ -11,10 +11,12 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './store/effects/app.effects';
 import { AutEffects } from './store/effects/aut.effects';
 import {HttpClient, HttpHandler} from '@angular/common/http';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,10 @@ import {HttpClient, HttpHandler} from '@angular/common/http';
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([AppEffects, AutEffects]),
   ],
-  providers: [HttpClient, HttpHandler],
+  providers: [
+    HttpClient,
+    HttpHandler
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
