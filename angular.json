@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "NgRx-Tutorial2"
+    }
+  },
+  "defaultProject": "NgRx-Tutorial2",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
